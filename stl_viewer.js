@@ -13,7 +13,7 @@ $(document).ready(function() {
 	//viewer.setParameter('ModelColor', '#CAA618');
 	viewer.setParameter('ModelColor', '#CCCCCC');
 	//viewer.setParameter('BackgroundColor1', '#FFFFFF');
-	viewer.setParameter('BackgroundColor1', '#336B99');
+	viewer.setParameter('BackgroundColor1', '#99B55C');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
 	viewer.setParameter('Definition', 'High');
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	canvas_drop.addEventListener('dragover', handleDragOver, false);
 	canvas_drop.addEventListener('drop', handleFileSelect, false);
 
-	////Drag and drop logic:
+	//Drag and drop logic:
 	function handleFileSelect(evt) {
 	    evt.stopPropagation();
 	    evt.preventDefault();
@@ -40,7 +40,7 @@ $(document).ready(function() {
 	    evt.dataTransfer.dropEffect = 'copy';
 	  }
 
-	////jsc3d logic
+	//jsc3d logic
 	var handle_file_select = function(e) {
 		e.stopPropagation()
 		e.preventDefault()
@@ -51,7 +51,7 @@ $(document).ready(function() {
 	function preview_stl(f) {
 		var reader = new FileReader()
 		var ext = f.name.split(".")[1]
-
+/*
 		function setup_viewer() {
 			viewer.setParameter('InitRotationX', 20);
 			viewer.setParameter('InitRotationY', 20);
@@ -62,7 +62,7 @@ $(document).ready(function() {
 			viewer.setParameter('RenderMode', "flat");
 		}
 		setup_viewer()
-
+*/
 		reader.onload = (function(file) {
 			return function(e) {
 				theScene = new JSC3D.Scene
