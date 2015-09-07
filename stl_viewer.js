@@ -3,15 +3,18 @@ $(document).ready(function() {
 	var mycanvas = document.getElementById('upload_canvas');
 	var viewer = new JSC3D.Viewer(mycanvas)
 	var theScene = new JSC3D.Scene;
-	////Initialize with a default file:
+	
+	//Initialize viewer with a default file:
 	var stlpath = "pump.stl"
 	viewer.setParameter('SceneUrl', stlpath);
     viewer.setParameter('InitRotationX', 20);
 	viewer.setParameter('InitRotationY', 20);
 	viewer.setParameter('InitRotationZ', 0);
-	viewer.setParameter('ModelColor', '#CAA618');
+	//viewer.setParameter('ModelColor', '#CAA618');
+	viewer.setParameter('ModelColor', '#CCCCCC');
 	viewer.setParameter('BackgroundColor1', '#FFFFFF');
-	viewer.setParameter('BackgroundColor2', '#383840');
+	viewer.setParameter('BackgroundColor2', '#00467F');
+	viewer.setParameter('Definition', 'High');
 	viewer.init();
 	viewer.update();
 	
