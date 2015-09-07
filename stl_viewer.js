@@ -12,8 +12,10 @@ $(document).ready(function() {
 	viewer.setParameter('InitRotationZ', 0);
 	//viewer.setParameter('ModelColor', '#CAA618');
 	viewer.setParameter('ModelColor', '#CCCCCC');
-	viewer.setParameter('BackgroundColor1', '#FFFFFF');
+	//viewer.setParameter('BackgroundColor1', '#FFFFFF');
+	viewer.setParameter('BackgroundColor1', '#336B99');
 	viewer.setParameter('BackgroundColor2', '#00467F');
+	viewer.setParameter('RenderMode', 'smooth');
 	viewer.setParameter('Definition', 'High');
 	viewer.init();
 	viewer.update();
