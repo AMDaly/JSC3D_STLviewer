@@ -13,7 +13,7 @@ $(document).ready(function() {
 	//viewer.setParameter('ModelColor', '#CAA618');
 	viewer.setParameter('ModelColor', '#CCCCCC');
 	//viewer.setParameter('BackgroundColor1', '#FFFFFF');
-	viewer.setParameter('BackgroundColor1', '#99B55C');
+	viewer.setParameter('BackgroundColor1', '#99B5CC');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
 	viewer.setParameter('Definition', 'High');
