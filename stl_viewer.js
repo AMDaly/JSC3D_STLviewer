@@ -86,14 +86,8 @@ $(document).ready(function() {
 
 	//Update renderer definition after button clicks
 	function setDefinition(definition) {
-		console.log("Clicked button");
-		console.log(viewer.theScene);
-		viewer.setDefinition(definition);
-		viewer.update();
-		/*
-    	if(viewer.getScene()) {
-    		viewer.setDefinition(definition);
-    		viewer.update();
-    	}*/
+		console.log("Clicked button")
+		viewer.setDefinition(definition)
+		viewer.update()
     }
 })
