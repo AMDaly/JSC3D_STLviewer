@@ -29,13 +29,13 @@ $(document).ready(function() {
 		canvas_drop.addEventListener('drop', handleFileSelect, false);
 
 	var lowQualButton = document.getElementById('low_quality')
-		lowQualButton.addEventListener('onclick', setDefinition('low'), false);
+		lowQualButton.addEventListener('click', setDefinition('low'), false);
 
 	var standardQualButton = document.getElementById('low_quality')
-    	standardQualButton.addEventListener('onclick', setDefinition('standard'), false);
+    	standardQualButton.addEventListener('click', setDefinition('standard'), false);
 
     var highQualButton = document.getElementById('low_quality')
-    	highQualButton.addEventListener('onclick', setDefinition('high'), false);
+    	highQualButton.addEventListener('click', setDefinition('high'), false);
 
 	//Drag and drop logic:
 	function handleFileSelect(evt) {
@@ -87,6 +87,7 @@ $(document).ready(function() {
 	//Update renderer definition after button clicks
 	function setDefinition(definition) {
 		console.log("Clicked button");
+		console.log(viewer.theScene);
 		viewer.setDefinition(definition);
 		viewer.update();
 		/*
