@@ -33,12 +33,9 @@
 <div class="canvas" id="canvas-drop">
     <canvas id="upload_canvas" width="480" height="320" style="border: 1px solid;"></canvas>
 </div>
-                    <!--<button id="low_quality" onclick="setDefinition('low');">low quality</button>
+                    <button id="low_quality" onclick="setDefinition('low');">low quality</button>
                     <button id="standard_quality" onclick="setDefinition('standard');">standard quality</button>
-                    <button id="high_quality" onclick="setDefinition('high');">high quality</button>-->
-                    <button id="low_quality">low quality</button>
-                    <button id="standard_quality">standard quality</button>
-                    <button id="high_quality">high quality</button>
+                    <button id="high_quality" onclick="setDefinition('high');">high quality</button>
 
 <p>JSC3D allows models to be rotated and zoomed in/out: drag with your left mouse button in the canvas for rotation,
     mouse-wheel to zoom.</p>
@@ -51,6 +48,15 @@
 <script type="text/javascript" src="https://rawgit.com/AMDaly/jsc3d_Example/gh-pages/stl_viewer.js"></script>
 
 <script type="text/javascript" src="https://rawgit.com/AMDaly/jsc3d_Example/gh-pages/jsc3d.touch.js"></script>
+
+<script type="text/javascript">
+function setDefinition(definition) {
+	if(viewer.getScene()) {
+		viewer.setDefinition(definition);
+		viewer.update();
+	}
+}
+                    </script>
 
                 </div>
             </div>
