@@ -14,7 +14,7 @@ $(document).ready(function() {
 	viewer.setParameter('BackgroundColor1', '#99B5CC');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
-	if (jQuery.browser.mobile) {
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		viewer.setParameter('Definition', 'Standard');
 	}
 	else {
