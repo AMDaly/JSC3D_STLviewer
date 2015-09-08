@@ -4,15 +4,13 @@ $(document).ready(function() {
 	var viewer = new JSC3D.Viewer(mycanvas)
 	var theScene = new JSC3D.Scene;
 	
-	//Initialize viewer with a default file:
+	//Initialize viewer and load a specified .STL file
 	var stlpath = "pump.stl"
 	viewer.setParameter('SceneUrl', stlpath);
     viewer.setParameter('InitRotationX', 20);
 	viewer.setParameter('InitRotationY', 20);
 	viewer.setParameter('InitRotationZ', 0);
-	//viewer.setParameter('ModelColor', '#CAA618');
 	viewer.setParameter('ModelColor', '#CCCCCC');
-	//viewer.setParameter('BackgroundColor1', '#FFFFFF');
 	viewer.setParameter('BackgroundColor1', '#99B5CC');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
@@ -51,24 +49,13 @@ $(document).ready(function() {
 	function preview_stl(f) {
 		var reader = new FileReader()
 		var ext = f.name.split(".")[1]
-/*
-		function setup_viewer() {
-			viewer.setParameter('InitRotationX', 20);
-			viewer.setParameter('InitRotationY', 20);
-			viewer.setParameter('InitRotationZ', 0);
-			viewer.setParameter('ModelColor', '#CAA618');
-			viewer.setParameter('BackgroundColor1', '#FFFFFF');
-			viewer.setParameter('BackgroundColor2', '#383840');
-			viewer.setParameter('RenderMode', "flat");
-		}
-		setup_viewer()
-*/
+
 		reader.onload = (function(file) {
 			return function(e) {
 				theScene = new JSC3D.Scene
 		    	stl_loader = new JSC3D.StlLoader()
 		    	stl_loader.parseStl(theScene, e.target.result)
-		      	//viewer.init()
+		      	//Instead of viewer.init()
 		      	viewer.replaceScene(theScene)
 		      	viewer.update()
 		      	console.log("file reader onload")
@@ -76,7 +63,7 @@ $(document).ready(function() {
 		})(f)
 
 		if (ext.toLowerCase() != "stl") {
-			alert("That doesn't appear to be an STL file.");
+			alert("That file does not appear to be an STL file.");
 		} else {
 			reader.readAsBinaryString(f)
 		}
