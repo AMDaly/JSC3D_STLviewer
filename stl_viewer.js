@@ -14,7 +14,12 @@ $(document).ready(function() {
 	viewer.setParameter('BackgroundColor1', '#99B5CC');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
-	viewer.setParameter('Definition', 'High');
+	if (jQuery.browser.mobile) {
+		viewer.setParameter('Definition', 'Standard');
+	}
+	else {
+		viewer.setParameter('Definition', 'High');
+	}
 	viewer.init();
 	viewer.update();
 	
