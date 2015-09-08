@@ -26,8 +26,17 @@ $(document).ready(function() {
 	viewer.update();
 	
 	var canvas_drop = document.getElementById('canvas-drop')
-	canvas_drop.addEventListener('dragover', handleDragOver, false);
-	canvas_drop.addEventListener('drop', handleFileSelect, false);
+		canvas_drop.addEventListener('dragover', handleDragOver, false);
+		canvas_drop.addEventListener('drop', handleFileSelect, false);
+
+	var lowQualButton = document.getElementById('low_quality')
+		lowQualButton.addEventListener('onclick', setDefinition('low'), false);
+
+	var standardQualButton = document.getElementById('low_quality')
+    	standardQualButton.addEventListener('onclick', setDefinition('standard'), false);
+
+    var highQualButton = document.getElementById('low_quality')
+    	highQualButton.addEventListener('onclick', setDefinition('high'), false);
 
 	//Drag and drop logic:
 	function handleFileSelect(evt) {
