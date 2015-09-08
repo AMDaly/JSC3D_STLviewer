@@ -14,8 +14,10 @@ $(document).ready(function() {
 	viewer.setParameter('BackgroundColor1', '#99B5CC');
 	viewer.setParameter('BackgroundColor2', '#00467F');
 	viewer.setParameter('RenderMode', 'flat');
+	//Detect mobile device and adjust Definition accordingly (also try if (navigator.userAgent.match(/Mobi/)))
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		viewer.setParameter('Definition', 'Standard');
+		viewer.Renderer
 	}
 	else {
 		viewer.setParameter('Definition', 'High');
@@ -63,7 +65,7 @@ $(document).ready(function() {
 		      	//Instead of viewer.init()
 		      	viewer.replaceScene(theScene)
 		      	viewer.update()
-		      	console.log("file reader onload")
+		      	console.log("file reader on load")
 			}
 		})(f)
 
@@ -73,4 +75,12 @@ $(document).ready(function() {
 			reader.readAsBinaryString(f)
 		}
 	}
+
+	//Update renderer definition after button clicks
+	function setDefinition(definition) {
+    		if(viewer.getScene()) {
+    			viewer.setDefinition(definition);
+    			viewer.update();
+    		}
+    	}
 })
