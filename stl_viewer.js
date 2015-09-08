@@ -31,10 +31,10 @@ $(document).ready(function() {
 	var lowQualButton = document.getElementById('low_quality')
 		lowQualButton.addEventListener('click', setDefinition('low'), false);
 
-	var standardQualButton = document.getElementById('low_quality')
+	var standardQualButton = document.getElementById('standard_quality')
     	standardQualButton.addEventListener('click', setDefinition('standard'), false);
 
-    var highQualButton = document.getElementById('low_quality')
+    var highQualButton = document.getElementById('high_quality')
     	highQualButton.addEventListener('click', setDefinition('high'), false);
 
 	//Drag and drop logic:
