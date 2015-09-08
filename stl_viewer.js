@@ -29,14 +29,14 @@ $(document).ready(function() {
 		canvas_drop.addEventListener('dragover', handleDragOver, false);
 		canvas_drop.addEventListener('drop', handleFileSelect, false);
 
-	/*var lowQualButton = document.getElementById('low_quality')
+	var lowQualButton = document.getElementById('low_quality')
 		lowQualButton.addEventListener('onclick', setDefinition('low'), false);
 
 	var standardQualButton = document.getElementById('low_quality')
     	standardQualButton.addEventListener('onclick', setDefinition('standard'), false);
 
     var highQualButton = document.getElementById('low_quality')
-    	highQualButton.addEventListener('onclick', setDefinition('high'), false);*/
+    	highQualButton.addEventListener('onclick', setDefinition('high'), false);
 
 	//Drag and drop logic:
 	function handleFileSelect(evt) {
@@ -87,9 +87,11 @@ $(document).ready(function() {
 
 	//Update renderer definition after button clicks
 	function setDefinition(definition) {
-    		if(viewer.getScene()) {
-    			viewer.setDefinition(definition);
-    			viewer.update();
-    		}
+		console.log("Clicked button");
+		console.log(viewer.getScene());
+    	if(viewer.getScene()) {
+    		viewer.setDefinition(definition);
+    		viewer.update();
     	}
+    }
 })
