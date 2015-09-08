@@ -17,7 +17,6 @@ $(document).ready(function() {
 	//Detect mobile device and adjust Definition accordingly (also try if (navigator.userAgent.match(/Mobi/)))
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		viewer.setParameter('Definition', 'Standard');
-		viewer.Renderer
 	}
 	else {
 		viewer.setParameter('Definition', 'High');
@@ -88,10 +87,12 @@ $(document).ready(function() {
 	//Update renderer definition after button clicks
 	function setDefinition(definition) {
 		console.log("Clicked button");
-		console.log(viewer.getScene());
+		viewer.setDefinition(definition);
+		viewer.update();
+		/*
     	if(viewer.getScene()) {
     		viewer.setDefinition(definition);
     		viewer.update();
-    	}
+    	}*/
     }
 })
