@@ -1,64 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
+<html class="no-js" lang="">
     <head>
+        <title>Dentsply Sirona: JSC3D STL Viewer</title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>STL file preview with JSC3D </title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link rel="stylesheet" type="text/css" href=".css" media="screen, handheld">-->
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <div class="doc-container">
-            <div class="content-container">
-                <!-- <div class="background_outer">
-                    <div class="background_inner">
-                        <img src=".png"/>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <center>
+            <div class="doc-container">
+                <div class="content-container">
+                    <div class="titleBar">
+                        <h1>STL Model Viewer</h1>
+                        <div class="titlebar_image"></div>
                     </div>
-                </div> -->
-                <div class="titleBar">
-                    <h1>STL Model Viewer</h1>
-                    <div class="titlebar_image"></div>
-                </div>
-                <div class="info-box">
+                    <hr style="width:75%;text-align:left;margin-left:0.5">
+                    <div class="info-box">
                     <!--<p><link rel="stylesheet" type="text/css" href=".css" media="screen, handheld"></p>-->
-
-<h1>STL file preview with JSC3D</h1>
-
-<p>This is an implementation of JSC3D, a canvas-based Javascript 3d library.</p>
-
-<p>The original functionality includes a drag-and-drop feature for the 3d model viewer, allowing a user to bring their
-    own .STL files into the viewer. </p>
-
-<p>This drag-and-drop feature can been snipped, as it may not provide the end user with any necessary functionality.</p>
-
-<div class="canvas" id="canvas-drop">
-    <canvas id="upload_canvas" width="480" height="320" style="border: 1px solid;"></canvas>
-</div>
-                    <!--<button id="low_quality" onclick="setDefinition('low');">low quality</button>
-                    <button id="standard_quality" onclick="setDefinition('standard');">standard quality</button>
-                    <button id="high_quality" onclick="setDefinition('high');">high quality</button>-->
-                    <button id="low_quality">low quality</button>
-                    <button id="standard_quality">standard quality</button>
-                    <button id="high_quality">high quality</button>
-
-<p>JSC3D allows models to be rotated and zoomed in/out: drag with your left mouse button in the canvas for rotation,
-    mouse-wheel to zoom.</p>
-<p>Try to drag-and-drop ortho bracket STL files to see how they come out.</p>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script type="text/javascript" src="https://rawgit.com/AMDaly/jsc3d_Example/gh-pages/jsc3d.js"></script>
-
-<script type="text/javascript" src="https://rawgit.com/AMDaly/jsc3d_Example/gh-pages/stl_viewer.js"></script>
-
-<script type="text/javascript" src="https://rawgit.com/AMDaly/jsc3d_Example/gh-pages/jsc3d.touch.js"></script>
-
+                        <h1>STL File Preview with JSC3D Tool Kit</h1>
+                        <p>This is an implementation of JSC3D, a canvas-based Javascript 3D Library.
+                            <br>Current functionality allows file exchange via drag-and-drop into 3D Viewing Window.
+                        </p>
+                        <center><div class="canvas" id="canvas-drop">
+                            <canvas id="upload_canvas" width="480" height="320" style="border: 1px solid;"></canvas>
+                                </div>
+                        </center>
+                        <button id="low_quality">low quality</button>
+                        <button id="standard_quality">standard quality</button>
+                        <button id="high_quality">high quality</button>
+                        <hr style="width:75%;text-align:left;margin-left:0.5">
+                        <ul style="width:210px;text-align:left;margin-left:0">
+                            <u><strong>User Interface</strong></u>
+                            <li>Zoom In/Out:
+                                <ol>
+                                    <li>Scrool Wheel</li>
+                                    <li>Shift + LMC</li>
+                                </ol>
+                            </li>
+                            <li> Pan:Ctrl + LMC</li>
+                            <li>3D Rotation: LMC (Hold+Drag)</li>
+                            <strong>
+                                <em>LMC = Left Mouse Click</em>
+                            </strong>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="nav_outer">
-                <div class="nav_inner">
-                    <div class="nav-bar">
-</div>
+                <div class="nav_outer">
+                    <div class="nav_inner">
+                        <div class="nav-bar"></div>
+                    </div>
                 </div>
+            </div>                        
+        </center>
+        <footer>
+            <div>
+                <img src="img/Logo2.svg" />
+                Anthony Daly, Jonathan Hobren
             </div>
-        </div>
-<!--<div style="display: none;"></div><style> .humane, .humane-libnotify { position: fixed; -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; transition: all 0.3s ease-out; z-index: 100000; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); } .humane, .humane-libnotify { font-family: Ubuntu, Arial, sans-serif; text-align: center; font-size: 15px; top: 10px; right: 10px; opacity: 0; width: 150px; color: #fff; padding: 10px; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABQCAYAAADYxx/bAAAABmJLR0QA/wD/AP+gvaeTAAAANElEQVQYlWNgYGB4ysTAwMDAxMjICCUQXDQWAwMDAxMTExMedcRyB6d5CAMQ5hGrjSrmAQBQdgIXlosSTwAAAABJRU5ErkJggg=='); background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0.9)), color-stop(1, rgba(50,50,50,0.9))) no-repeat; background: -moz-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.9) 100%) no-repeat; background: -webkit-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.9) 100%) no-repeat; background: -ms-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.9) 100%) no-repeat; background: -o-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.9) 100%) no-repeat; background: linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(50,50,50,0.9) 100%) no-repeat; *background-color: #000; -webkit-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 4px 4px -4px #000; box-shadow: 0 4px 4px -4px #000; -moz-transform: translateY(-40px); -webkit-transform: translateY(-40px); -ms-transform: translateY(-40px); -o-transform: translateY(-40px); transform: translateY(-40px); } .humane p, .humane-libnotify p, .humane ul, .humane-libnotify ul { margin: 0; padding: 0; } .humane ul, .humane-libnotify ul { list-style: none; } .humane.humane-libnotify-info, .humane-libnotify.humane-libnotify-info { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABQCAYAAADYxx/bAAAABmJLR0QA/wD/AP+gvaeTAAAAMUlEQVQYlWNgYDB6ysTAwMDAxMDACCcYUFkMDEwMDEwMBNVhkxg65jGhmke6M6hgHgBSdgHnpZwADwAAAABJRU5ErkJggg=='); background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,50,0.9)), color-stop(1, rgba(0,0,100,0.9))) no-repeat; background: -moz-linear-gradient(top, rgba(0,0,50,0.9) 0%, rgba(0,0,100,0.9) 100%) no-repeat; background: -webkit-linear-gradient(top, rgba(0,0,50,0.9) 0%, rgba(0,0,100,0.9) 100%) no-repeat; background: -ms-linear-gradient(top, rgba(0,0,50,0.9) 0%, rgba(0,0,100,0.9) 100%) no-repeat; background: -o-linear-gradient(top, rgba(0,0,50,0.9) 0%, rgba(0,0,100,0.9) 100%) no-repeat; background: linear-gradient(top, rgba(0,0,50,0.9) 0%, rgba(0,0,100,0.9) 100%) no-repeat; *background-color: #030; } .humane.humane-libnotify-success, .humane-libnotify.humane-libnotify-success { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABQCAYAAADYxx/bAAAABmJLR0QA/wD/AP+gvaeTAAAAMUlEQVQYlWNgMGJ4ysTAwMDAxMAIJxhQWQwMDEwMTKgS2NRhkxg65jGhmke6M6hhHgBS2QHn2LzhygAAAABJRU5ErkJggg=='); background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,50,0,0.9)), color-stop(1, rgba(0,100,0,0.9))) no-repeat; background: -moz-linear-gradient(top, rgba(0,50,0,0.9) 0%, rgba(0,100,0,0.9) 100%) no-repeat; background: -webkit-linear-gradient(top, rgba(0,50,0,0.9) 0%, rgba(0,100,0,0.9) 100%) no-repeat; background: -ms-linear-gradient(top, rgba(0,50,0,0.9) 0%, rgba(0,100,0,0.9) 100%) no-repeat; background: -o-linear-gradient(top, rgba(0,50,0,0.9) 0%, rgba(0,100,0,0.9) 100%) no-repeat; background: linear-gradient(top, rgba(0,50,0,0.9) 0%, rgba(0,100,0,0.9) 100%) no-repeat; *background-color: #030; } .humane.humane-libnotify-error, .humane-libnotify.humane-libnotify-error { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADICAYAAAAp8ov1AAAABmJLR0QA/wD/AP+gvaeTAAAAPklEQVQokWMwYmB4ysTAwMCATjASFsOmBBvBRJ7x+O0g0wCS7CDTH/RwH7X9MVDuwyaG032D2M2UeIYO7gMAqt8C19Bn7+YAAAAASUVORK5CYII='); background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(50,0,0,0.9)), color-stop(1, rgba(100,0,0,0.9))) no-repeat; background: -moz-linear-gradient(top, rgba(50,0,0,0.9) 0%, rgba(100,0,0,0.9) 100%) no-repeat; background: -webkit-linear-gradient(top, rgba(50,0,0,0.9) 0%, rgba(100,0,0,0.9) 100%) no-repeat; background: -ms-linear-gradient(top, rgba(50,0,0,0.9) 0%, rgba(100,0,0,0.9) 100%) no-repeat; background: -o-linear-gradient(top, rgba(50,0,0,0.9) 0%, rgba(100,0,0,0.9) 100%) no-repeat; background: linear-gradient(top, rgba(50,0,0,0.9) 0%, rgba(100,0,0,0.9) 100%) no-repeat; *background-color: #300; } .humane.humane-animate, .humane-libnotify.humane-libnotify-animate { opacity: 1; -moz-transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); transform: translateY(0); } .humane.humane-animate:hover, .humane-libnotify.humane-libnotify-animate:hover { opacity: 0.2; } .humane.humane-animate, .humane-libnotify.humane-libnotify-js-animate { opacity: 1; -moz-transform: translateY(0); -webkit-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); transform: translateY(0); } .humane.humane-animate:hover, .humane-libnotify.humane-libnotify-js-animate:hover { opacity: 0.2; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); } .gi-assertion-select * { cursor: crosshair !important; } .gi-assertion-select *:hover { outline: 1px dotted rgba(0, 0, 0, 1); } .gi-assertion-selected { outline: 3px solid rgba(0, 170, 0, 1) !important; } </style></html>-->
+        </footer>
+        <!-- End site content -->
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!--<script type="text/javascript" src="./JSC3D_New_040716_files/jquery.min.js"></script>-->
+        <script type="text/javascript" src="js/jsc3d.js"></script>
+        <script type="text/javascript" src="js/stl_viewer.js"></script>
+        <script type="text/javascript" src="js/jsc3d.touch.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
